@@ -12,13 +12,18 @@ def main():
         f"Screen height: {SCREEN_HEIGHT}\n"
     )
     
+    clock = pygame.time.Clock()
+    dt = 0
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-                
+
         screen.fill("#002000")
         pygame.display.flip()
+
+        dt = clock.tick(60) / 1000
 
 
 if __name__ == "__main__":
